@@ -1,5 +1,5 @@
 shinyUI(pageWithSidebar(
-        headerPanel('Concrete strength class prediction'),
+        headerPanel('Concrete mixture learning tool'),
         sidebarPanel(
                 h3('Data Input'),
                 sliderInput("Age", "Curing time [days]",
@@ -10,15 +10,16 @@ shinyUI(pageWithSidebar(
                             100, 250, 200, step=10),
                 sliderInput("FineAggregate", "Fine aggregate [kg/m3]",
                             700, 1100, 750, step=10),
-                sliderInput("CoarseAggregate", "CoarseAggregate [kg/m3]",
+                sliderInput("CoarseAggregate", "Coarse Aggregate [kg/m3]",
                             700, 1100, 900, step=10)           
         ),
         mainPanel(
                 h3('Instructions'),
                 p('This application predicts the most likely concrete strength class 
                   (the letter C followed by the predicted strength in MPa). The prediction 
-                  is based on a four ingredient mixture.'),
-                a("For more information, view this short presentation.", href="http://rpubs.com/pprevos/46662"),
+                  is based on a five ingredient mixture.'),
+                a("For more information, view this short presentation.", 
+                  href="http://rpubs.com/pprevos/concrete"),
                 p(" "),
                 p('Please select the mixture by using the sliders on the left.'),
                 
@@ -30,7 +31,7 @@ shinyUI(pageWithSidebar(
                 textOutput("age"),
                 
                 h3('Prediction'),
-                div(tableOutput("predict"), style="background-color: lightgray"),
+                div(textOutput("predict"), style="background-color: lightgray"),
                 
                 h3('Background Information'),
                 p('The prediction is made based on the following prediction tree:'),
