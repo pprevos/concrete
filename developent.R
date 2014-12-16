@@ -23,7 +23,12 @@ class <- colnames(prediction)[which.max(prediction)]
 
 print(class)
 
+splom(concrete, pch=19)
+psych::pairs.panels(concrete)
 
+library(scatterplot3d)
+with(concrete, scatterplot3d(Cement, Water, Class, pch="."))
 
-
-
+library(Rcmdr)
+attach(mtcars)
+with(concrete, scatter3d(Cement, Water, Class, pch="."))

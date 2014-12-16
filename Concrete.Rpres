@@ -6,7 +6,7 @@ date: 5 December 2014
 
 Introduction
 ========================================================
-This application helps civil engineering students to explore the impact of concrete mixture composition and curing age on compression strength based on five variables:
+This [application](https://prevos.shinyapps.io/CourseProject/) helps civil engineering students to explore the impact of concrete mixture composition and curing age on compression strength based on five variables:
 * Curing time [days]
 * Water content [l/m3]
 
@@ -31,10 +31,11 @@ Decision Model
 ========================================================
 The application is based on a Regression Tree model based on a data set by [Yeh](http://www.sciencedirect.com/science/article/pii/S0008884698001653) (1998).
 
-The model is inaccurate but nevertheless helps beginning students to understand the relationships between curing age and concrete mixture design.
-
+This model was chosen becaus it emulates the types of decisions made by engineers when desiging concrete mixtures.
 
 ***
+The model assists beginning students to understand the relationships between the variables.
+
 ```{r, echo=FALSE}
 library(AppliedPredictiveModeling)
 library(Hmisc)
@@ -53,7 +54,7 @@ prp(fit, extra=6, box.col=fit$frame$yval+1, ycompress=F, compress=F,
 
 Conclusion
 ========================================================
-The application is great to provide students a first introduction into the intricacies of designing concrete mixture.
+The application is great tool to provide students a first introduction into the decisions that guide good concrete mixture design.
 
 ***
 ![Civil Engineering](http://media2.inktastic.com/thumbnail/349/48/48349.1.png)
